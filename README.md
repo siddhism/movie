@@ -15,21 +15,17 @@ pip install -r reuqirements.txt
 ./manage.py populate_movies
 ```
 
-Admin url
-access : http://abc.herokuapp.com/admin/
-username : siddhesh
-password : fynd1234
 
 API request examples
 
 base API url
-http://localhost:7000/api/movies
+https://pure-fortress-93926.herokuapp.com/api/movies
 
 filter by name (full text search)
-http://localhost:7000/api/movies?name=wizard
+https://pure-fortress-93926.herokuapp.com/api/movies?name=wizard
 
 filter by movie name and director name
-http://localhost:7000/api/movies?name=wizard&director=victor
+https://pure-fortress-93926.herokuapp.com/api/movies?name=wizard&director=victor
 
 filter by genre name
-http://localhost:7000/api/movies?genre=family
+https://pure-fortress-93926.herokuapp.com/api/movies?genre=family
