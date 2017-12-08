@@ -23,6 +23,7 @@ class Command(BaseCommand):
                 k['imdb_score'] = movie_item.get('imdb_score')
                 movie, created = Movie.objects.get_or_create(**k)
                 genre_list = movie_item.get('genre')
+                # create genre for each genre in list and attach to current movie
                 for name in genre_list:
                     name = name.strip()
                     genre, created = Genre.objects.get_or_create(name=name)

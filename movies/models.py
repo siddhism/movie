@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 from django.db import models
 
 class Genre(models.Model):
+    """
+    Genre model : Table for movie Genres
+    """
     name = models.CharField(max_length=500)
 
     class Meta:
@@ -14,6 +17,9 @@ class Genre(models.Model):
     
 
 class Movie(models.Model):
+    """
+    Movie model : model for Movies
+    """
     name = models.CharField(max_length=500)
     imdb_score = models.FloatField()
     popularity = models.FloatField()
