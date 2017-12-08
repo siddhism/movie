@@ -71,7 +71,4 @@ target/
 # For pycharm
 .idea/
 
-*.sqlite3
-
-.DS_Store
 static/
