@@ -18,5 +18,25 @@ class IndexView(APIView):
 
     def get(self, request, *args, **kwargs):
         queryset = Movie.objects.all()
+
+        name = request.query_params.get('name', None)
+        if name is not None:
+            queryset = queryset.filter(name__icontains=name)
+
+        director = request.query_params.get('director', None)
+        if director is not None:
+            queryset = queryset.filter(director__icontains=director)
+
+        # filter if movie has genre with queried genre name
+        genre = request.query_params.get('genre', None)
+        if genre is not None:
+            queryset = queryset.filter(genre__name__icontains=genre)
+
+
+        director = request.query_params.get('director', None)
+        if director is not None:
+            queryset = queryset.filter(director__icontains=director)
+
+        # TODO : integer filter for popularity and imdb score
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
