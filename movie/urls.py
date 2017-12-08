@@ -16,13 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
+from django.conf.urls.static import static
+
 from movies import urls as movie_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(movie_urls, namespace='api')),
-]
-
-urlpatterns += patterns('',
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
