@@ -15,8 +15,8 @@ class Genre(models.Model):
 
 class Movie(models.Model):
     name = models.CharField(max_length=500)
-    imdb_score = models.IntegerField()
-    popularity = models.IntegerField()
+    imdb_score = models.FloatField()
+    popularity = models.FloatField()
     director = models.CharField(max_length=500)
     genre = models.ManyToManyField(Genre)
 
